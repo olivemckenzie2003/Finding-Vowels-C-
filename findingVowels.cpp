@@ -2,8 +2,6 @@
 
 // Function to hunt for vowels
 void hunt_for_vowels(char message[], unsigned int size){
-    // Don't modify anything above this line
-    // Your code should go below this line
 
     int vowel_count = 0;
     for (unsigned int i = 0; i < size; ++i) {
@@ -14,9 +12,6 @@ void hunt_for_vowels(char message[], unsigned int size){
             vowel_count++;
         }
     }
-
-    // Your code should go above this line
-    // Don't modify anything below this line
 
     // For testing purposes, we'll print the vowel count
     std::cout << "Number of vowels: " << vowel_count << std::endl;
