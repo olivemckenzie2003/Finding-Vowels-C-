@@ -1,0 +1,46 @@
+Good job!
+Yeees! You got this right. The program will loop from 0 to 4 inclusive and will print stuff for a total of 5 times. But can you spot a problem with this. We're getting a 6 that isn't in our data array. The reason is our array has only 4 elements but we're looping 5 times and attempting to access data outside the bounds of our array. The loop will access data[4] and that's ourtside the range or our array which can only go from data[0] up to data[3] for a total of 4 elements. Going out of bounds is a BAD THING! Anything can happen. In this case, we have a garbage value of 6.
+Question 1:
+
+Without compiling and running this program
+
+      int data[] {1,2,4,5};
+      for(unsigned int i{0}; i <= 4; ++ i){
+        std::cout << "value : " <<  data[i] << std::endl;
+      }
+
+what's the most likely output ? 
+
+Good job!
+Yeees! You got this right. The program will loop from 0 to 4 inclusive and will print stuff for a total of 5 times. But can you spot a problem with this. We're getting a 6 that isn't in our data array. The reason is our array has only 4 elements but we're looping 5 times and attempting to access data outside the bounds of our array. The loop will access data[4] and that's ourtside the range or our array which can only go from data[0] up to data[3] for a total of 4 elements. Going out of bounds is a BAD THING! Anything can happen. In this case, we have a garbage value of 6.
+Question 1:
+
+Without compiling and running this program
+
+      int data[] {1,2,4,5};
+      for(unsigned int i{0}; i <= 4; ++ i){
+        std::cout << "value : " <<  data[i] << std::endl;
+      }
+
+what's the most likely output ? 
+
+
+
+Good job!
+Yeees! You got this right. The code won't pass compilation because what we have is not a valid declaration of an array. I put in those () to throw you off on purpose :-).
+Question 2:
+
+What makes more sense about the code below ? 
+
+int data() {1,2,4,5,9,3,6,7};
+
+
+Good job!
+Yees! You got this. We have 8 elements in the array so the size is 8, but because arrays and most collections in computer science really, are indexed from 0, the valid index range is from data[0] up to data[7] giving us a total of 8 elements. Any kind of access outside the valid range of this array will result in BAD STUFF happening. You may get garbage values, your program may crash . The message here is PLEASE BE MINDFUL OF THE VALID BOUNDS OF YOUR ARRAYS and make sure your code only works within valid ranges.
+Question 3:
+
+What makes more sense about the code below ? 
+
+int data[] {1,2,4,5,9,3,6,7}; 
+
+

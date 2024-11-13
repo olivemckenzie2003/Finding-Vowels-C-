@@ -1,0 +1,94 @@
+#include <iostream>
+
+//using namespace std;
+
+int main() {
+    for(unsigned int i{};i<10;i++){
+    std::cout<<("Ilove you")<<std::endl;
+    }
+    
+      std::cout<<(" ")<<std::endl;
+      std::cout<<(" ")<<std::endl;
+    
+    
+    for(size_t i{};i<10;i++){
+    std::cout<<("Ilove you")<<std::endl;
+    }
+    
+     std::cout<<(" ")<<std::endl;
+      std::cout<<(" ")<<std::endl;
+    
+    size_t p{0};// iterrator defined outside
+    
+    for(;p<10;p++){
+    std::cout<<("Ilove you")<<std::endl;
+    }
+    
+     std::cout<<(" ")<<std::endl;
+     std::cout<<(" ")<<std::endl;
+    
+    std::cout<<p<<std::endl;
+    
+    
+    const size_t COUNT{10};
+    
+    
+    std::cout<<(" ")<<std::endl;
+    std::cout<<(" ")<<std::endl;
+    
+    for(size_t p{};p<COUNT;p++){
+    std::cout<<("Ilove you")<<std::endl;
+    std::cout<<p<<std::endl;
+    }
+    
+    
+    std::cout<<"sizeof(size_t) : "<<sizeof(size_t)<<std::endl;
+    
+    
+    size_t x{0};// iterrator defin
+    
+    for(x;x<10;x++){
+    std::cout<<("x you")<<std::endl;
+    }
+    
+     std::cout<<(" ")<<std::endl;
+     std::cout<<(" ")<<std::endl;
+    
+    std::cout<<x<<std::endl;
+    
+    
+    
+    
+}
+
+
+
+//iterator
+//starting Point
+//test
+//increment/decrement
+//loop body
+
+
+
+#include "exercise.h"
+using namespace std;
+
+unsigned int sum_up_to_99(){
+    unsigned int sum{};
+    
+    //Don't modify anything above this line
+    //Your code will go below this line
+    const size_t count{100};
+    unsigned int i{};
+    const int Count=100;
+   
+     for(i; i < Count; ++i){
+        sum+= i;
+        cout<<sum<<endl;
+    }
+    //Your code will go above this line
+    //Don't modify anyting below this line
+
+     return sum;
+}

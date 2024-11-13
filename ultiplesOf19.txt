@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+void multiples_of_19(){
+    
+    //Don't modify anything above this line
+    //Your code will go below this line
+
+     
+    
+    unsigned int i{100};
+     do{
+          if((i%19)==0){
+             std::cout << i<<" ";
+         }
+         
+         ++i; // Incrementation
+       
+    }while( i<1001);
+
+
+   //Your code will go above this line
+   //Don't modify anything below this line
+}
+   
+
+int main() {
+    
+         multiples_of_19();
+    
+}

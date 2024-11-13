@@ -1,0 +1,171 @@
+    Yes. You got this right! The assignment   age_ref = age1 is what throws a lot of people off! One may think that it's changing the reference to make it point to ( or reference) something else but in C++ there is no syntax to change what a reference is referencing once it's already declared and initialized. So what the assignment is really doing is merely changing the value into the memory location the reference is already referencing. Great job on getting this right.
+
+
+
+#include <iostream>
+     
+    int main(){
+        
+        int age{33};
+     
+        int& age_ref{age};
+     
+        std::cout << "--Before--" << std::endl;
+        std::cout << "age_ref: " << age_ref << std::endl;
+        std::cout << "&age_ref : " << &age_ref << std::endl;
+     
+        int age1 {44};
+        age_ref = age1;
+     
+        std::cout << "--After--" << std::endl;
+        std::cout << "age_ref: " << age_ref << std::endl;
+        std::cout << "&age_ref : " << &age_ref << std::endl;
+     
+        return 0;
+    }
+
+
+--Before--
+age_ref: 33
+&age_ref : 0x7ffdc0933848
+--After--
+age_ref: 44
+&age_ref : 0x7ffdc0933848
+
+
+
+Good job!
+Yes. You got this right. The compiler can see that see tha twe flagged age as const. So it will go to great measures to make sure that age variable isn't modified in any way. So when the compiler notices the declaration of our reference, it notices one could go through the reference and modify the referenced variable which is const by design, violating the constness of the age variable. The compiler doesn't like that and throws a compiler error.
+Question 2:
+
+Considering the code below : 
+
+    #include <iostream>
+     
+    int main(){
+        
+        const int age{33};
+     
+        int& age_ref{age};
+     
+        std::cout << "--Before--" << std::endl;
+        std::cout << "age_ref: " << age_ref << std::endl;
+        std::cout << "&age_ref : " << &age_ref << std::endl;
+     
+        int age1 {44};
+        age_ref = age1;
+     
+        std::cout << "--After--" << std::endl;
+        std::cout << "age_ref: " << age_ref << std::endl;
+        std::cout << "&age_ref : " << &age_ref << std::endl;
+     
+        return 0;
+    }
+
+What will be the output of the program ? 
+
+
+jdoodle.cpp: In function ‘int main()’:
+jdoodle.cpp:7:25: error: binding reference of type ‘int&’ to ‘const int’ discards qualifiers
+    7 |         int& age_ref{age};
+
+
+
+
+Good job!
+Yes. You got this right! Now the compiler sees thar our reference declaration is const and the reference will protect our age constness. If someone tries to go through the reference to modify our data. BOOOM! A compiler error will bo thrown into your face. This is exacly what will happen in our code snippet.
+
+    #include <iostream>
+     
+    int main(){
+        
+        const int age{33};
+     
+        const int& age_ref{age};
+     
+        std::cout << "--Before--" << std::endl;
+        std::cout << "age_ref: " << age_ref << std::endl;
+        std::cout << "&age_ref : " << &age_ref << std::endl;
+     
+        int age1 {44};
+        age_ref = age1;
+     
+        std::cout << "--After--" << std::endl;
+        std::cout << "age_ref: " << age_ref << std::endl;
+        std::cout << "&age_ref : " << &age_ref << std::endl;
+     
+        return 0;
+    }
+
+
+jdoodle.cpp: In function ‘int main()’:
+jdoodle.cpp:14:17: error: assignment of read-on
+
+
+
+
+
+#include <iostream>
+
+
+int main(){
+
+    int scores[] {1,2,3,4,5,6,7,8,9,10};
+    
+    //Printing positions
+    std::cout << std::endl;
+	
+	std::cout << "Scores : ";
+    for ( auto score : scores){
+        std::cout << " " << score ;
+    }
+	std::cout << std::endl;
+
+
+   for ( auto& score : scores){
+        score = score * 10;
+    }
+
+    //Printing after change
+     std::cout << std::endl;
+	std::cout << "Scores : ";
+    for ( auto score : scores){
+        std::cout << " " << score ;
+    }
+	std::cout << std::endl;
+    
+    return 0;
+}
+
+
+
+Scores :  1 2 3 4 5 6 7 8 9 10
+
+Scores :  10 20 30 40 50 60 70 80 90 100
+
+
+
+
+
+
+void print_uppercase(){
+            for( unsigned char i{0}; i< 255 ; ++i){
+                
+            //Don't modify anything above thie line
+            //Your code goes below this line
+  
+  
+              if (i >= 'A' && i <= 'Z') { // ASCII range for uppercase letters
+                std::cout << i;
+                if (i < 'Z') std::cout << " "; // Add space unless it's the last letter
+            }
+  
+  
+  
+
+            //Your code goes above this line
+            //Don't modify anything after this line
+        }
+}
+
+

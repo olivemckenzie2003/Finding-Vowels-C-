@@ -1,0 +1,74 @@
+
+Merge them!
+
+You are given two arrays of int . Your job is to merge them into a new larger array. For example if your two input arrays are
+
+  int data1[] {1,2,3,4,5,66,77};
+
+and   int data2[] {10,20,30,40,50,60};
+
+Your code would merge them into a new array conveniently called new_array with the data
+
+1 2 3 4 5 66 77 10 20 30 40 50 60
+
+Once you have the new merged array, you'll print it out with std::cout exactly like
+
+1 2 3 4 5 66 77 10 20 30 40 50 60
+
+with elements separated by a single space and a single space after the last element. The spacing we just described is important! If your code gets it wrong, our testing code will flag that as a problem.
+
+You will put your code within the comments
+
+        //Don't modify anything above this line
+        //Your code will go below this line
+     
+        //Your code will go above this line
+        //Don't modify anything below this line
+
+in the exercise.cpp file. In there you will have access to the names for the two arrays to merge, namely data1 and data2 and the respective sizes for each of these arrays sorted in the variables size1 and size2 . While merging your data, it is important for data1 to come before data2 in new_array. If you look closely at our example output above the data from data1 comes on the left (or in front) of the data from data2 : your code should behave the same way.
+
+Please give this your best shot. If you are still stuck after REALLY trying , you can click on the solution.txt file to open our reference solution and learn as much as you can from it. 
+
+
+
+
+
+include <iostream>
+#include "exercise.h"
+
+
+void merge_arrays(int data1[], int data2[],
+           unsigned int size1, unsigned int size2){
+
+    //Don't modify anything above this line
+    //Your code will go below this line
+
+// Step 1: Create a new array with size equal to the sum of size1 and size2
+int new_array[size1 + size2];
+
+// Step 2: Copy data1 elements into new_array
+for (int i = 0; i < size1; ++i) {
+    new_array[i] = data1[i];
+}
+
+// Step 3: Copy data2 elements into new_array, starting after the last element of data1
+for (int i = 0; i < size2; ++i) {
+    new_array[size1 + i] = data2[i];
+}
+
+// Step 4: Print the new_array with elements separated by a single space
+for (int i = 0; i < size1 + size2; ++i) {
+    std::cout << new_array[i];
+    
+    // Print a space after each element, including after the last element
+    if (i < size1 + size2 - 1) {
+        std::cout << " ";
+    } else {
+        std::cout << " "; // Ensuring a single space after the last element
+    }
+}
+    //Your code will go above this line
+    //Don't modify anything below this line
+
+
+}
